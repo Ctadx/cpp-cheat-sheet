@@ -10,13 +10,13 @@
 		- [1.1 Overview](#11-overview)
 		- [1.2 Vector `std::vector`](#12-vector-stdvector)
 		- [1.3 Deque `std::deque`](#13-deque-stddeque)
-		- [1.4 List `std::list` and `std::forward_list`](#14-list-stdlist-and-stdforwardlist)
-		- [1.5 Map `std::map` and `std::unordered_map`](#15-map-stdmap-and-stdunorderedmap)
+		- [1.4 List `std::list` and `std::forward_list`](#14-list-stdlist-and-stdforward_list)
+		- [1.5 Map `std::map` and `std::unordered_map`](#15-map-stdmap-and-stdunordered_map)
 		- [1.6 Set `std::set`](#16-set-stdset)
 		- [1.7 Stack `std::stack`](#17-stack-stdstack)
 		- [1.8 Queue `std::queue`](#18-queue-stdqueue)
-		- [1.9 Priority Queue `std::priority_queue`](#19-priority-queue-stdpriorityqueue)
-		- [1.10 Heap `std::priority_queue`](#110-heap-stdpriorityqueue)
+		- [1.9 Priority Queue `std::priority_queue`](#19-priority-queue-stdpriority_queue)
+		- [1.10 Heap `std::priority_queue`](#110-heap-stdpriority_queue)
 	- [2.0 Trees](#20-trees)
 		- [2.1 Binary Tree](#21-binary-tree)
 		- [2.2 Balanced Trees](#22-balanced-trees)
@@ -42,11 +42,11 @@
 
 ![Legend](General/Legend.png)
 
-![DataStructures](General/Data Structures.png)
+![DataStructures](General/Data%20Structures.png "Data Structures")
 
-![ComplexityChart](General/Complexity Chart.png)
+![ComplexityChart](General/Complexity%20Chart.png "Complexity Chart")
 
-![DataStructureSelection](General/Data Structures Selection.png)
+![DataStructureSelection](General/Data%20Structures%20Selection.png "Data Structures Selection")
 -------------------------------------------------------
 ### 1.2 Vector `std::vector`
 **Use for**
@@ -83,30 +83,30 @@ std::vector<int> v;
 // General Operations
 //---------------------------------
 
-//Insert head, index, tail
-v.insert(v.begin(), value);             //head
-v.insert(v.begin() + index, value);     //index
-v.push_back(value);                     //tail
+// Insert head, index, tail
+v.insert(v.begin(), value);             // head
+v.insert(v.begin() + index, value);     // index
+v.push_back(value);                     // tail
 
-//Access head, index, tail
-int head = v.front();       //head
-int value = v.at(index);    //index
-int tail = v.back();        //tail
+// Access head, index, tail
+int head = v.front();       // head
+int value = v.at(index);    // index
+int tail = v.back();        // tail
 
-//Size
+// Size
 unsigned int size = v.size();
 
-//Iterate
+// Iterate
 for(std::vector<int>::iterator it = v.begin(); it != v.end(); it++) {
     std::cout << *it << std::endl;
 }
 
-//Remove head, index, tail
-v.erase(v.begin());             //head
-v.erase(v.begin() + index);     //index
-v.pop_back();                   //tail
+// Remove head, index, tail
+v.erase(v.begin());             // head
+v.erase(v.begin() + index);     // index
+v.pop_back();                   // tail
 
-//Clear
+// Clear
 v.clear();
 ```
 -------------------------------------------------------
@@ -130,30 +130,30 @@ std::deque<int> d;
 // General Operations
 //---------------------------------
 
-//Insert head, index, tail
-d.push_front(value);                    //head
-d.insert(d.begin() + index, value);     //index
-d.push_back(value);                     //tail
+// Insert head, index, tail
+d.push_front(value);                    // head
+d.insert(d.begin() + index, value);     // index
+d.push_back(value);                     // tail
 
-//Access head, index, tail
-int head = d.front();       //head
-int value = d.at(index);    //index
-int tail = d.back();        //tail
+// Access head, index, tail
+int head = d.front();       // head
+int value = d.at(index);    // index
+int tail = d.back();        // tail
 
-//Size
+// Size
 unsigned int size = d.size();
 
-//Iterate
-for(std::vector<int>::iterator it = d.begin(); it != d.end(); it++) {
+// Iterate
+for(std::deque<int>::iterator it = d.begin(); it != d.end(); it++) {
     std::cout << *it << std::endl;
 }
 
-//Remove head, index, tail
-d.pop_front();                  //head
-d.erase(d.begin() + index);     //index
-d.pop_back();                   //tail
+// Remove head, index, tail
+d.pop_front();                  // head
+d.erase(d.begin() + index);     // index
+d.pop_back();                   // tail
 
-//Clear
+// Clear
 d.clear();
 ```
 -------------------------------------------------------
@@ -186,55 +186,55 @@ std::list<int> l;
 // General Operations
 //---------------------------------
 
-//Insert head, index, tail
-l.push_front(value);                    //head
-l.insert(l.begin() + index, value);     //index
-l.push_back(value);                     //tail
+// Insert head, index, tail
+l.push_front(value);                    // head
+l.insert(l.begin() + index, value);     // index
+l.push_back(value);                     // tail
 
-//Access head, index, tail
-int head = l.front();                                           //head
-int value = std::list<int>::iterator it = l.begin() + index;    //index
-int tail = l.back();                                            //tail
+// Access head, index, tail
+int head = l.front();                                           // head
+int value = std::next(l.begin(), index);		        // index
+int tail = l.back();                                            // tail
 
-//Size
+// Size
 unsigned int size = l.size();
 
-//Iterate
+// Iterate
 for(std::list<int>::iterator it = l.begin(); it != l.end(); it++) {
     std::cout << *it << std::endl;
 }
 
-//Remove head, index, tail
-l.pop_front();                  //head
-l.erase(l.begin() + index);     //index
-l.pop_back();                   //tail
+// Remove head, index, tail
+l.pop_front();                  // head
+l.erase(l.begin() + index);     // index
+l.pop_back();                   // tail
 
-//Clear
+// Clear
 l.clear();
 
 //---------------------------------
 // Container-Specific Operations
 //---------------------------------
 
-//Splice: Transfer elements from list to list
-//  splice(iterator pos, list &x)
-//  splice(iterator pos, list &x, iterator i)
-//  splice(iterator pos, list &x, iterator first, iterator last)
+// Splice: Transfer elements from list to list
+//	splice(iterator pos, list &x)
+//  	splice(iterator pos, list &x, iterator i)
+//  	splice(iterator pos, list &x, iterator first, iterator last)
 l.splice(l.begin() + index, list2);
 
-//Remove: Remove an element by value
+// Remove: Remove an element by value
 l.remove(value);
 
-//Unique: Remove duplicates
+// Unique: Remove duplicates
 l.unique();
 
-//Merge: Merge two sorted lists
+// Merge: Merge two sorted lists
 l.merge(list2);
 
-//Sort: Sort the list
+// Sort: Sort the list
 l.sort();
 
-//Reverse: Reverse the list order
+// Reverse: Reverse the list order
 l.reverse();
 ```
 -------------------------------------------------------
@@ -284,36 +284,34 @@ std::map<std::string, std::string> m;
 // General Operations
 //---------------------------------
 
-//Insert
+// Insert
 m.insert(std::pair<std::string, std::string>("key", "value"));
 
-//Access key, value
+// Access by key
 std::string value = m.at("key");
-std::string value = *(std::map<std::string, std::string>::iterator it = m.find("value"));
 
-//Size
+// Size
 unsigned int size = m.size();
 
-//Iterate
-for(std::map<int>::iterator it = m.begin(); it != m.end(); it++) {
-    std::cout << "key"*it << std::endl;
+// Iterate
+for(std::map<std::string, std::string>::iterator it = m.begin(); it != m.end(); it++) {
+    std::cout << *it << std::endl;
 }
 
-//Remove by key, value
+// Remove by key
 m.erase("key");
-m.erase(m.find("value"));
 
-//Clear
+// Clear
 m.clear();
 
 //---------------------------------
 // Container-Specific Operations
 //---------------------------------
 
-//Find if an element exists by value
-bool exists = (m.find("value") != m.end());
+// Find if an element exists by key
+bool exists = (m.find("key") != m.end());
 
-//Count the number of elements with a certain key
+// Count the number of elements with a certain key
 unsigned int count = m.count("key");
 ```
 -------------------------------------------------------
@@ -345,31 +343,31 @@ std::set<int> s;
 // General Operations
 //---------------------------------
 
-//Insert
+// Insert
 s.insert(20);
 
-//Size
+// Size
 unsigned int size = s.size();
 
-//Iterate
+// Iterate
 for(std::set<int>::iterator it = s.begin(); it != s.end(); it++) {
     std::cout << *it << std::endl;
 }
 
-//Remove
-s.remove(20);
+// Remove
+s.erase(20);
 
-//Clear
+// Clear
 s.clear();
 
 //---------------------------------
 // Container-Specific Operations
 //---------------------------------
 
-//Find if an element exists
+// Find if an element exists
 bool exists = (s.find(20) != s.end());
 
-//Count the number of elements with a certain value
+// Count the number of elements with a certain value
 unsigned int count = s.count(20);
 ```
 -------------------------------------------------------
@@ -394,16 +392,16 @@ std::stack<int> s;
 // Container-Specific Operations
 //---------------------------------
 
-//Push
+// Push
 s.push(20);
 
-//Size
+// Size
 unsigned int size = s.size();
 
-//Pop
+// Pop
 s.pop();
 
-//Top
+// Top
 int top = s.top();
 ```
 -------------------------------------------------------
@@ -425,17 +423,17 @@ std::queue<int> q;
 // General Operations
 //---------------------------------
 
-//Insert
+// Insert
 q.push(value);
 
-//Access head, tail
-int head = q.front();       //head
-int tail = q.back();        //tail
+// Access head, tail
+int head = q.front();       // head
+int tail = q.back();        // tail
 
-//Size
+// Size
 unsigned int size = q.size();
 
-//Remove
+// Remove
 q.pop();
 ```
 -------------------------------------------------------
@@ -456,24 +454,24 @@ std::priority_queue<int> p;
 // General Operations
 //---------------------------------
 
-//Insert
+// Insert
 p.push(value);
 
-//Access
-int top = p.top();  //`Top` element
+// Access
+int top = p.top();  // 'Top' element
 
-//Size
+// Size
 unsigned int size = p.size();
 
-//Remove
+// Remove
 p.pop();
 ```
 -------------------------------------------------------
 ### 1.10 Heap `std::priority_queue`
 **Notes**
 * A heap is essentially an instance of a priority queue
-* A **min** heap is structured with the root node as the smallest and each child subsequently smaller than its parent
-* A **max** heap is structured with the root node as the largest and each child subsequently larger than its parent
+* A **min** heap is structured with the root node as the smallest and each child subsequently larger than its parent
+* A **max** heap is structured with the root node as the largest and each child subsequently smaller than its parent
 * A min heap could be used for *Smallest Job First* CPU Scheduling
 * A max heap could be used for *Priority* CPU Scheduling
 
@@ -524,7 +522,7 @@ p.pop();
 
 **Visualization:**
 
-![BinarySearch](Searching/Animations/Binary Search.gif)
+![BinarySearch](Searching/Animations/Binary%20Search.gif "Binary Search")
 -------------------------------------------------------
 ### 2.4 Depth-First Search
 **Idea:**
@@ -544,7 +542,7 @@ p.pop();
 
 **Visualization:**
 
-![DepthFirstSearch](Searching/Animations/Depth-First Search.gif)
+![DepthFirstSearch](Searching/Animations/Depth-First%20Search.gif "Depth-First Search")
 -------------------------------------------------------
 ### 2.5 Breadth-First Search
 **Idea:**
@@ -563,7 +561,7 @@ p.pop();
 
 **Visualization:**
 
-![DepthFirstSearch](Searching/Animations/Breadth-First Search.gif)
+![DepthFirstSearch](Searching/Animations/Breadth-First%20Search.gif "Breadth-First Search")
 -------------------------------------------------------
 ## 3.0 NP Complete Problems
 ### 3.1 NP Complete
@@ -576,185 +574,149 @@ p.pop();
 -------------------------------------------------------
 ### 3.3 Knapsack Problem
 
+[Implementation](NP-complete/knapsack/)
+
 -------------------------------------------------------
 
 ## 4.0 Algorithms
 ###  4.1 Insertion Sort
-**Idea:**
+#### Idea
 1. Iterate over all elements
 2. For each element:
     * Check if element is larger than largest value in sorted array
 3. If larger: Move on
 4. If smaller: Move item to correct position in sorted array
 
-**Data structure:**
-* Array
+#### Details
+* **Data structure:** Array
+* **Space:** `O(1)`
+* **Best Case:** Already sorted, `O(n)`
+* **Worst Case:** Reverse sorted, `O(n^2)`
+* **Average:** `O(n^2)`
 
-**Space:**
-* O(1)
+#### Advantages
+* Easy to code
+* Intuitive
+* Better than selection sort and bubble sort for small data sets
+* Can sort in-place
 
-**Best Case:**
-    * Already sorted
-    * O(n)
-**Worst Case:**
-    * Reverse sorted
-    * O(n^2)
-**Average:**
-    * O(n^2)
+#### Disadvantages
+* Very inefficient for large datasets
 
-**Advantages**
-    * Easy to code
-    * Intuitive
-    * Better than selection sort and bubble sort for small data sets
-    * Can sort in-place
+#### Visualization
 
-**Disadvantages**
-    * Very inefficient for large datasets
-
-**Visualization**
-
-![InsertionSort](Sorting/Animations/Insertion Sort.gif)
+![InsertionSort](Sorting/Animations/Insertion%20Sort.gif "Insertion Sort")
 -------------------------------------------------------
 ### 4.2 Selection Sort
-**Idea:**
+#### Idea
 1. Iterate over all elements
 2. For each element:
     * If smallest element of unsorted sublist, swap with left-most unsorted element
 
-**Data structure:**
-* Array
+#### Details
+* **Data structure:** Array
+* **Space:** `O(1)`
+* **Best Case:** Already sorted, `O(n^2)`
+* **Worst Case:** Reverse sorted, `O(n^2)`
+* **Average:** `O(n^2)`
 
-**Space:**
-* O(1)
+#### Advantages
+* Simple
+* Can sort in-place
+* Low memory usage for small datasets
 
-**Best Case:**
-    * Already sorted
-    * O(n^2)
-**Worst Case:**
-    * Reverse sorted
-    * O(n^2)
-**Average:**
-    * O(n^2)
+#### Disadvantages
+* Very inefficient for large datasets
 
-**Advantages**
-    * Simple
-    * Can sort in-place
-    * Low memory usage for small datasets
+#### Visualization
 
-**Disadvantages**
-    * Very inefficient for large datasets
+![SelectionSort](Sorting/Animations/Selection%20Sort.gif "Selection Sort")
 
-**Visualization**
-
-![SelectionSort](Sorting/Animations/Selection Sort.gif)
-
-![SelectionSort](Sorting/Animations/Selection Sort 2.gif)
+![SelectionSort](Sorting/Animations/Selection%20Sort%202.gif "Selection Sort 2")
 -------------------------------------------------------
 ### 4.3 Bubble Sort
-**Idea:**
+#### Idea
 1. Iterate over all elements
 2. For each element:
     * Swap with next element if out of order
 3. Repeat until no swaps needed
 
-**Data structure:**
-* Array
+#### Details
+* **Data structure:** Array
+* **Space:** `O(1)`
+* **Best Case:** Already sorted `O(n)`
+* **Worst Case:** Reverse sorted, `O(n^2)`
+* **Average:** `O(n^2)`
 
-**Space:**
-* O(1)
+#### Advantages
+* Easy to detect if list is sorted
 
-**Best Case:**
-    * Already sorted
-    * O(n)
-**Worst Case:**
-    * Reverse sorted
-    * O(n^2)
-**Average:**
-    * O(n^2)
+#### Disadvantages
+* Very inefficient for large datasets
+* Much worse than even insertion sort
 
-**Advantages**
-    * Easy to detect if list is sorted
+#### Visualization
 
-**Disadvantages**
-    * Very inefficient for large datasets
-    * Much worse than even insertion sort
-
-**Visualization**
-
-![BubbleSort](Sorting/Animations/Bubble Sort.gif)
+![BubbleSort](Sorting/Animations/Bubble%20Sort.gif "Bubble Sort")
 -------------------------------------------------------
 ### 4.4 Merge Sort
-**Idea:**
+#### Idea
 1. Divide list into smallest unit (1 element)
 2. Compare each element with the adjacent list
 3. Merge the two adjacent lists
 4. Repeat
 
-**Data structure:**
-* Array
+#### Details
+* **Data structure:** Array
+* **Space:** `O(n) auxiliary`
+* **Best Case:** `O(nlog(n))`
+* **Worst Case:** Reverse sorted, `O(nlog(n))`
+* **Average:** `O(nlog(n))`
 
-**Space:**
-* O(n) auxiliary
+#### Advantages
+* High efficiency on large datasets
+* Nearly always O(nlog(n))
+* Can be parallelized
+* Better space complexity than standard Quicksort
 
-**Best Case:**
-    * O(nlog(n))
-**Worst Case:**
-    * Reverse sorted
-    * O(nlog(n))
-**Average:**
-    * O(nlog(n))
+#### Disadvantages
+* Still requires O(n) extra space
+* Slightly worse than Quicksort in some instances
 
-**Advantages**
-    * High efficiency on large datasets
-    * Nearly always O(nlog(n))
-    * Can be parallelized
-    * Better space complexity than standard Quicksort
+#### Visualization
 
-**Disadvantages**
-    * Still requires O(n) extra space
-    * Slightly worse than Quicksort in some instances
+![MergeSort](Sorting/Animations/Merge%20Sort.gif "Merge Sort")
 
-**Visualization**
-
-![MergeSort](Sorting/Animations/Merge Sort.gif)
-
-![MergeSort](Sorting/Animations/Merge Sort 2.gif)
+![MergeSort](Sorting/Animations/Merge%20Sort%202.gif "Merge Sort 2")
 -------------------------------------------------------
 ### 4.5 Quicksort
-**Idea:**
+#### Idea
 1. Choose a **pivot** from the array
 2. Partition: Reorder the array so that all elements with values *less* than the pivot come before the pivot, and all values *greater* than the pivot come after
 3. Recursively apply the above steps to the sub-arrays
 
-**Data structure:**
-* Array
+#### Details
+* **Data structure:** Array
+* **Space:** `O(n)`
+* **Best Case:** `O(nlog(n))`
+* **Worst Case:** All elements equal, `O(n^2)`
+* **Average:** `O(nlog(n))`
 
-**Space:**
-* O(n)
+#### Advantages
+* Can be modified to use O(log(n)) space
+* Very quick and efficient with large datasets
+* Can be parallelized
+* Divide and conquer algorithm
 
-**Best Case:**
-    * O(nlog(n))
-**Worst Case:**
-    * All elements equal
-    * O(n^2)
-**Average:**
-    * O(nlog(n))
+#### Disadvantages
+* Not stable (could swap equal elements)
+* Worst case is worse than Merge Sort
 
-**Advantages**
-    * Can be modified to use O(log(n)) space
-    * Very quick and efficient with large datasets
-    * Can be parallelized
-    * Divide and conquer algorithm
-
-**Disadvantages**
-    * Not stable (could swap equal elements)
-    * Worst case is worse than Merge Sort
-
-**Optimizations**
+#### Optimizations
 * Choice of pivot:
     * Choose median of the first, middle, and last elements as pivot
     * Counters worst-case complexity for already-sorted and reverse-sorted
 
-**Visualization**
+#### Visualization
 
 ![QuickSort](Sorting/Animations/Quicksort.gif)
